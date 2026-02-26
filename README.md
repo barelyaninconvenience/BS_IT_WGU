@@ -513,16 +513,27 @@ The transformation delivered measurable business value beyond security improveme
 ## Review of Other Work (Implementation)
 
 [2] The Cybersecurity and Infrastructure Security Agency (CISA) Zero Trust Maturity Model provided comprehensive implementation guidance across five pillars with three crosscutting capabilities and a four-stage maturity progression. While the project chose to implement the NIST Cybersecurity Framework's five-phase structure as the primary methodology for instantiating NIST ZTA principles, the CISA model served as a valuable comparative framework for objective retrospection and maturity assessment.
+
 The key distinction between the frameworks lies in their structural approach: NIST emphasizes functional phases that align with incident response lifecycles, while CISA focuses on capability pillars that emphasize cross-domain integration. The NIST approach provided more intuitive guidance, particularly given FFIEC's adoption of NIST framework principles. However, the CISA pillar-matrix assessment enabled quantitative progressive measurements during the Identify phase, tracking metrics including identity verification coverage, device compliance rates, network micro-segmentation implementation, application access controls, and data classification accuracy.
+
 In retrospective analysis using CISA maturity benchmarks, the implemented solution achieved "Advanced" maturity levels across all five pillars. The matrix's emphasis on cross-pillar integration proved particularly valuable when coordinating software redundancy, overlap, and handoff, and validated the architectural decisions made.
+
 [4] The Gartner market analysis provided critical vendor evaluation criteria that directly influenced architectural decisions, particularly in evaluating SDP technologies. This research offered a comprehensive ZTA solutions and capabilities analysis, confirming the strategic outline of vendor-agnostic sub-components and top vendors that best fill each gap. The guide's discussion of hybrid deployment strategies proved essential for balancing old and new.
+
 The cost-benefit analysis framework supported business case development and helped establish realistic ROI expectations. The vendor comparison matrices enabled systematic evaluation against specific requirements, including scalability, regulatory compliance support, and total cost of ownership. Additionally, the research's future roadmap considerations influenced architectural decisions to ensure long-term viability and the evolution potential of the implemented solution.
+
 [11] Yeoh, Liu, Shore, and Jiang's research provided an evaluation framework and success metrics that guided implementation decisions and post-deployment assessment. The critical success factors identified - organizational readiness, technology integration, change management, and continuous improvement processes - directly shaped user training programs and stakeholder engagement strategies. The maturity assessment criteria offered quantitative methodologies for measuring implementation effectiveness across technical, operational, and business dimensions while providing points of comparison and benchmarking against industry standards.
+
 This work's emphasis on insatiable reassessment influenced the design of automated monitoring systems and established the foundation for ongoing optimization efforts. The research provided specific guidance on organizational change management, addressing cultural resistance to Zero Trust principles and developing effective communication strategies for different stakeholder groups. Integrating business value measurement with technical capability assessment enabled comprehensive project success evaluation.
+
 [12] Kim's specialized research addressed unique implementation challenges specific to financial organizations, providing crucial insights for navigating industry-specific requirements. The work examined the intersection of Zero Trust principles with financial industry regulations, offering practical guidance for maintaining compliance while implementing transformative security architectures.
+
 The study's examination of financial threat landscapes directly informed threat modelling activities during the Identify phase, particularly in understanding APT tactics targeting financial institutions and insider threat scenarios unique to banking operations. Kim's user experience considerations influenced the design of authentication workflows to balance security requirements with operational efficiency demands. The research also corroborated a phased implementation approach.
+
 [17] Gambo and Almulhem's encyclopedic literature review extensively validated implementation approaches across diverse organizational contexts. The systematic analysis of 147 peer-reviewed publications offered insights into implementation success factors and common challenges within the Zero Trust domain.
+
 The Machine Learning (ML) application analysis provided a theoretical foundation for the behavioral analytics enmeshment using Darktrace Enterprise Immune System, compounding user experience considerations, informed training programs, and change management strategies. The review's identification of emerging trends and research gaps also provided valuable insights for long-term strategic planning and continuous improvement initiatives beyond the initial implementation project.
+
 [25] Recent research by Muhammad (2025) on unified cryptographic and ML frameworks for digital banking fraud mitigation provides compelling validation for the Phase 2 scope expansion opportunity identified during implementation. This work demonstrates the growing convergence between cybersecurity behavioral analytics and financial fraud detection, directly supporting the strategic decision to develop integrated financial transaction monitoring capabilities as a subsequent enhancement. 
 
 ---
@@ -566,21 +577,35 @@ These environmental changes collectively represented approximately 25% scope exp
 ## Methodology (Implementation)
 
 The methodology incorporated the NIST Cybersecurity Framework as the foundational structure for implementing NIST ZTA principles. Rather than adopting or embedding the CISA Zero Trust Maturity Model, it served as a successive assessment and validation framework. This strategic choice was made because NIST's five-phase structure (Identify, Protect, Detect, Respond, Recover) aligned more intuitively with existing cybersecurity operations, incident response procedures, regulatory examination, project management, and change management processes. CISA's pillar-matrix (Identity, Device, Network/Environment, Application Workload, Data : Visibility & Analytics, Automation & Orchestration, Governance : Traditional, Initial, Advanced, Optimal) provided quantitative evaluation criteria that enhanced the project's analytical rigor and enabled systematic comparison with industry standards. The commensurate use of both frameworks enhanced implementation effectiveness while maintaining strategic focus on NIST ZTA principles. This, in turn, eluded a comprehensive, vendor-neutral guidance while maintaining alignment with federal cybersecurity standards expected by financial regulators, including the FFIEC, Office of the Comptroller of the Currency (OCC), and Federal Deposit Insurance Corporation (FDIC). The methodology adaptation specifically addressed financial regulatory requirements, including Sarbanes-Oxley Act (SOX) Sections, Payment Card Industry Data Security Standard (PCI-DSS) Level 1 compliance, and the Gramm-Leach-Billey Act (GLBA) Rules, and is apt for emerging policies. The framework's emphasis on continuous improvement and risk management complemented the company's existing governance structures and provided familiar terminology for stakeholder communications. This amalgamative and conclusive endeavor achieved pragmatic and parsable capability development while maintaining visibility into  implementation progress. 
+
 ### Phase 1: Identify - Pervasive Discovery and Assessment
+
 The identification phase established foundational understanding through systematic discovery and analysis. Asset inventory utilized automated discovery tools, including Lansweeper Enterprise for device identification, ManageEngine AssetExplorer for software inventory, and Nmap for network topology mapping. Manual validation complemented automated discovery to ensure complete coverage, revealing 847 managed devices, 312 documented applications, 129 shadow IT solutions, and 17 network segments. Asset classification employed a four-tier sensitivity model aligned with FFIEC data classification guidelines: Public (marketing materials, general corporate information), Internal (operational procedures, non-sensitive client communications), Confidential (client financial data, trading information), and Restricted (regulatory reports, executive communications, merger and acquisition materials). Network architecture mapping transcended traditional topology documentation by incorporating traffic flow analysis, trust relationship identification, and communication pattern evaluation using Wireshark for packet analysis and SolarWinds Network Performance Monitor for baseline establishment.
+
 Threat modeling activities utilized the STRIDE (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege) methodology to evaluate potential attack vectors systematically. The analysis identified 19 high-priority threat scenarios, including APT infiltration, insider trading schemes, and customer data exfiltration. Risk assessment incorporated quantitative analysis using FAIR (Factor Analysis of Information Risk) methodologies and qualitative evaluation based on financial threat intelligence from industry sources, including the Financial Services Information Sharing and Analysis Center (FS-ISAC) and CISA advisories. 
+
 ### Phase 2: Protect - Core Infrastructure Implementation
-The protection phase established fundamental ZTA components through carefully orchestrated deployment activities. Virtual machine (VM) environments utilizing VMware vSphere infrastructure replicated production systems for extensive testing before impacting operational systems.
-ICAM enhancement represented the most critical component, requiring integration of Okta Universal Directory for centralized identity management with Ping Identity for advanced authentication and authorization capabilities. MFA deployment utilized adaptive approaches considering risk context, device compliance, geographic location, and behavioral patterns, while supporting hardware tokens, mobile applications, biometric authentication, and smart card integration to balance and accommodate diverse user preferences, experience, and security. SDP deployment through Palo Alto Prisma Access and Zscaler Private Access created 17 distinct micro-segments with granular access policies.
+
+The protection phase established fundamental ZTA components through carefully orchestrated deployment activities. Virtual machine (VM) environments utilizing VMware vSphere infrastructure replicated production systems for extensive testing before impacting operational systems. ICAM enhancement represented the most critical component, requiring integration of Okta Universal Directory for centralized identity management with Ping Identity for advanced authentication and authorization capabilities. MFA deployment utilized adaptive approaches considering risk context, device compliance, geographic location, and behavioral patterns, while supporting hardware tokens, mobile applications, biometric authentication, and smart card integration to balance and accommodate diverse user preferences, experience, and security. SDP deployment through Palo Alto Prisma Access and Zscaler Private Access created 17 distinct micro-segments with granular access policies.
+
 Network access control systems replaced traditional VPN architecture with dynamic, encrypted tunnels created for each application session. Palo Alto Next-Generation Firewall (NGFW) technologies provided deep packet inspection, application-aware filtering, and threat prevention capabilities. Zscaler Cloud Access Security Broker (CASB) protects cloud application access and prevents data loss. 
+
 ### Phase 3: Detect - Behavioral Analytics and Monitoring
+
 The detection phase deployed sophisticated monitoring capabilities powered by Artificial Intelligence and Machine Learning (AI/ML) algorithms. Darktrace Enterprise Immune System establishment required six weeks of data collection to create behavioral profiles and baseline normalcy for the 300 users, 847 devices, and 312 applications.
+
 Real-time monitoring systems processed 2.7 million security events daily, integrating multiple data sources, including network traffic analysis, authentication logs, application usage patterns from Splunk Universal Forwarders, and Endpoint Detection and Response (EDR) capabilities through CrowdStrike Falcon and Microsoft Defender ATP. The monitoring infrastructure utilized Elasticsearch clusters for high-performance data ingestion and analysis, with Kibana dashboards providing real-time visualization capabilities for security operations personnel.
+
 Automated threat detection algorithms incorporated threat intelligence feeds from seven commercial and government sources, including Recorded Future; IBM X-Force; Google Threat Intelligence; Microsoft Threat Intelligence; CISA Automated Indicator Sharing (AIS); InfraGard National Members Alliance (INMA); and US Department of Treasury, Pacific Northwest National Labratory, and Cloudflare Partnership's Early Warning Threat Intelligence for Financial Institutions. Additionally, CrowdStrike Falcon includes proprietary real-time threat data integration, and Rapid7 Threat Command was included in their service agreement. SIEM platform deployment utilized Splunk Enterprise Security and IBM QRadar to provide centralized event correlation, threat intelligence integration, and incident alerting capabilities, as well as subsequently automated policy enforcement actions.
+
 ### Phase 4: Respond - Automated Incident Response and Policy Adaptation
+
 The response phase established automated capabilities by deploying Splunk SOAR as the SOAR platform, coordinating responses across multiple security systems and tools. The SOAR platform automated evidence collection, timeline reconstruction, and impact assessment while providing security operations teams with centralized management and reporting capabilities.
+
 Incident response playbooks defined escalation procedures for 31 distinct threat categories with automated containment actions for high-confidence detections. Dynamic policy adjustment mechanisms enabled real-time modification of access permissions, network configurations, and monitoring levels based on calculated risk scores derived from behavioral analytics, threat intelligence correlation, and contextual factors.
+
 ### Phase 5: Recover - Resilience Validation and Continuous Improvement
+
 The recovery phase validated ZTA resilience through comprehensive testing scenarios. Disaster recovery and business continuity testing verified that critical business functions remained operational during significant incidents. Failover mechanisms were tested to verify that the architecture and components themselves did not become single points of failure. External penetration testing conducted by Rapid7 evaluated the architecture's effectiveness against realistic attack scenarios. The assessment confirmed successful mitigation of all identified high and critical risk scenarios while providing recommendations for ongoing refinement and optimization opportunities. 
 
 ---
@@ -588,18 +613,31 @@ The recovery phase validated ZTA resilience through comprehensive testing scenar
 ## Project Goals and Objectives (Results)
 
 The project's success was systematically evaluated against four strategic goals encompassing eight supporting objectives and 10 deliverables, with three goals achieving full accomplishment and one experiencing partial achievement due to strategic scope modifications.
+
 ### Goal 1: Establish Zero Trust Security Architecture: Fully Accomplished
+
 The primary objective of eliminating traditional security perimeters was successfully achieved through full-scope SDP implementation. The deployment created 17 distinct security zones utilizing Palo Alto Prisma Access and Zscaler Private Access technologies, with granular access policies governing all inter-zone communications.
+
 The continuous authentication and authorization implementation through Okta Universal Directory and Ping Identity exceeded expectations by achieving 1.4-second average MFA completion times while maintaining 99.7% success rates. SSO integration with all 312 applications eliminated password fatigue. Risk-based adaptive authentication engines
+
 automatically adjust security requirements based on contextual analysis.
+
 ### Goal 2: Integrate AI/ML-Powered Behavioral Analytics: Fully Accomplished
+
 The development of ML threat detection capabilities exceeded initial expectations, achieving 97.2% accuracy in identifying anomalous behaviors while maintaining a 2.1% falsepositive rate. The Darktrace Enterprise Immune System successfully processed 2.7 million daily security events to refine dynamic behavioral baselines continuously.
+
 Dynamic risk assessment systems continuously evaluate access requests using sophisticated contextual analysis, incorporating geographic location verification, device compliance validation, behavioral pattern analysis, and temporal access modelling. The User Entity Behavior Analytics (UEBA) dashboard provided security operations teams with an intuitive visualization of potential threats.
+
 Predictive capabilities leveraged ML model training datasets encompassing 18 months of historical security data, external threat intelligence, and industry-specific attack pattern libraries. The automated threat prediction system successfully identified 15 potential insider threats and 8 APT indicators during the first quarter of operation, enabling process reevaluation, non-punitive corrective action, and other proactive mitigations before impact. 
+
 ### Goal 3: Establish Comprehensive Security Monitoring: Partially Accomplished
+
 Security Operations Center (SOC) capabilities were successfully implemented with 24/7 monitoring dashboards providing real-time visibility into the security engine. The monitoring infrastructure integrated Splunk Enterprise Security and IBM QRadar SIEM platforms to process and correlate events with sophisticated automated alerting mechanisms and graduated response protocols.
+
 However, the continuous compliance monitoring objective required strategic scope reduction due to integration complexities with existing audit systems. While comprehensive monitoring capabilities were fully achieved, the envisioned fully automated compliance reporting component requires additional development phases. Manual validation processes remain necessary for certain audit procedures and regulatory examination preparation activities until seamless integration with external audit firms' validation procedures can be deconflicted and constructed.
+
 ### Goal 4: Enable Secure Remote Workforce: Fully Accomplished
+
 The remote work revitalization successfully eliminated VPN dependencies while providing enhanced security capabilities, substantially improving the user experience. The implementation supported secure access from 12 states and three countries while maintaining consistent security policies.
 Endpoint protection deployment provided comprehensive EDR capabilities. Mobile Device Management (MDM) implementation through Microsoft Intune enabled consistent security policy enforcement for corporate-owned and Bring-Your-Own-Device (BYOD) instances. 
 
@@ -608,9 +646,13 @@ Endpoint protection deployment provided comprehensive EDR capabilities. Mobile D
 ## Project Timeline (Actual)
 
 The Identify phase (Weeks 1-2) was completed precisely on schedule. The Protect phase experienced the most significant variance, extending from four weeks to six weeks, completing December 3, 2024, rather than the November 11 target. This extension was primarily attributable to two specific hangups, including Palo Alto Prisma Access and Zscaler Private Access deployment encountering challenges with legacy mainframe connectivity that necessitated custom gateway configurations and specialized tunnel protocols. The micro-segmentation implementation required additional fine-tuning to balance isolation with application interdependencies that were less foreseeable and not documented initially.
+
 The Detect phase (Weeks 9-11) maintained the original three-week duration but shifted later due to the Protect phase extension. The Respond and Recover phases were strategically consolidated and extended (Weeks 12-15), completing January 14, 2025. This consolidation enabled more comprehensive testing and validation activities while accommodating holiday scheduling constraints.
+
 The timeline extension required budget adjustments of approximately 18% over the original $680,000 estimate, totaling $816,000 in actual implementation costs. Despite budget increases, the extended implementation period provided substantial value through additional validation opportunities and optimization activities.
+
 Staffing augmentation included specialized contractors from Okta Professional Services, Palo Alto Networks consulting engineers, and Darktrace ML specialists. These experts provided knowledge transfer opportunities for internal IT staff while ensuring optimal configuration of all implemented technologies.
+
 Critical system testing and validation activities were scheduled to be completed before major holiday periods, and the extended timeline ultimately provided a buffer capacity that prevented any scheduling from impacting critical implementation milestones or creating pressure for rushed deployment decisions that could compromise brevity, security, or operational stability. 
 
 ---
@@ -733,213 +775,199 @@ Most importantly, the implementation validates that security excellence and busi
 
 ## References (Implementation)
 
-[1] Abdelmagid, A. M., & Diaz, R. (2025). Zero Trust Architecture as a Risk Countermeasure in
-Small-Medium Enterprises and Advanced Technology Systems. Risk Analysis, 45(4), 1-18.
-https://doi.org/10.1111/risa.70026\
-[2] Adahman, Z., Malik, A. W., & Anwar, Z. (2022). An Analysis of Zero-Trust Architecture
-and Its Cost-Effectiveness for Organizational Security. Computers & Security, 122, 102911.
-https://doi.org/10.1016/j.cose.2022.102911\
-[3] Axis Intelligence. (2025). Zero Trust Implementation Cost Calculator 2025. https://axisintelligence.com/zero-trust-implementation-cost-calculator-2025/\
-[4] Bairy, V. (2023). Zero Trust Architectures in Financial Institutions: A Case Study of
-Implementing Identity-Based Access Control with Cisco ISE. SSRN Electronic Journal.
-https://doi.org/10.2139/ssrn.5189885\
-[5] Bank Holding Company Act. (1956). 12 USC. § 1841 et seq.\
-[6] Bank Secrecy Act. (1970). 31 USC. § 5311 et seq.\
-[7] Basel Committee on Banking Supervision. (2017). Basel III: Finalising post-crisis reforms
-(Basel IV). Bank for International Settlements. https://www.bis.org/\
-[8] Board of Governors of the Federal Reserve System. (n.d.). Capital adequacy guidelines for
-bank holding companies. 12 CFR 225. https://www.federalreserve.gov/\
-[9] Bonderud, D. (2024). Security Cost of a Data Breach 2024 Financial Industry. IBM Think.
-https://www.ibm.com/think/insights/cost-of-a-data-breach-2024-financial-industry\
-[10] Broadcom. (2024). vSphere Documentation Center.
-https://techdocs.broadcom.com/us/en/vmware-cis/vsphere.html\
-[11] Cloudflare, US Department of Treasury, Pacific Northwest National Labratory. (2024).
-Tailored Threat Intelligence for Financial Institutions. https://www.cloudflare.com/pressreleases/2024/us-department-of-treasury-pnnl-finserv-threat-intel-feed/
-[12] Commodity Futures Trading Commission. (n.d.). About the CFTC. https://www.cftc.gov/
-[13] Community Reinvestment Act. (1977). 12 USC. § 2901 et seq.
-[14] Consumer Financial Protection Bureau. (n.d.). About us. https://www.consumerfinance.gov/
-[15] CrowdStrike Holdings, Inc. (2024). Falcon Endpoint Protection Platform Documentation.
-https://developer.crowdstrike.com/docs
-[16] Cunningham, C. (2018). The Zero Trust eXtended (ZTX) Ecosystem. Forrester Research.
-ROM3: Post-Implementation Report Comprehensive Zero-Trust Transformation
-PAGE 29
-https://engage2demand.cisco.com/LP=10091
-[17] Cybersecurity and Infrastructure Security Agency. (2023). Zero Trust Maturity Model
-(Version 2.0). US Department of Homeland Security.
-https://www.cisa.gov/sites/default/files/2023-04/zero_trust_maturity_model_v2_508.pdf
-[18] Cybersecurity and Infrastructure Security Agency. (2024). Automated Indicator Sharing
-Program. https://www.cisa.gov/topics/cyber-threats-and-advisories/informationsharing/automated-indicator-sharing-ais 
-[19] Daah, C., Qureshi, A., & Awan, I. (2023). Zero Trust Model Implementation Considerations
-in Financial Institutions: A Proposed Framework. Proceedings of the 2023 IEEE 11th
-International Conference on Future Internet of Things and Cloud (FiCloud) (pp. 71-77).
-https://doi.org/10.1109/FiCloud58648.2023.00019
-[20] Daah, C., Qureshi, A., Awan, I., & Konur, S. (2024). Enhancing Zero Trust Models in the
-Financial Industry through Blockchain Integration: A Proposed Framework. Electronics, 13(5),
-865. https://doi.org/10.3390/electronics13050865
-[21] Darktrace Ltd. (2024). Enterprise Immune System Technical Overview.
-https://www.darktrace.com/
-[22] Darktrace Ltd. (2024). Machine Learning Deployment Services.
-https://www.darktrace.com/services/
-[23] Deloitte & Touche LLP. (2024). Cybersecurity Strategy, Transformation and Assessment.
-https://www.deloitte.com/lu/en/services/consulting-risk/services/cyber-strategy-transformationassessments.html
-[24] Dhiman, P., Saini, N., Gulzar, Y., Turaev, S., Kaur, A., Nisa, K. U., & Hamid, Y. (2024). A
-Review and Comparative Analysis of Relevant Approaches of Zero Trust Network Model.
-Sensors, 24(4), 1328. https://doi.org/10.3390/s24041328
-[25] Dodd-Frank Wall Street Reform and Consumer Protection Act. (2010). Pub. L. 111-203,
-124 Stat. 1376.
-[26] Edo, O. C., Tenebe, T., Etu, E., Ayuwu, A., Emakhu, J., & Adebiyi, S. (2022). Zero Trust
-Architecture: Trend and Impact on Information Security. International Journal of Emerging
-Technology and Advanced Engineering, 12(7), 140-147. https://doi.org/10.46338/ijetae0722_15
-[27] Elastic N.V. (2024). The Elastic Stack. https://www.elastic.co/docs/get-started/the-stack
-[28] Equal Credit Opportunity Act. (1974). 15 USC. § 1691 et seq.
-ROM3: Post-Implementation Report Comprehensive Zero-Trust Transformation
-PAGE 30
-[29] Factor Analysis of Information Risk Institute. (2024). FAIR Risk Assessment Standards.
-https://www.fairinstitute.org/
-[30] Fair Credit Reporting Act. (1970). 15 USC. § 1681 et seq.
-[31] Federal Deposit Insurance Act. (1950). 12 USC. § 1811 et seq.
-[32] Federal Deposit Insurance Corporation. (n.d.). Part 363 - Annual independent audits and
-reporting requirements. 12 CFR 363.
-[33] Federal Financial Institutions Examination Council. (2024). Cybersecurity Assessment
-Tool. https://www.ffiec.gov/cyberassessmenttool.htm (Soon to be decommissioned)
-[34] Federal Financial Institutions Examination Council. (2024). IT Examination Handbook
-InfoBase. https://ithandbook.ffiec.gov/
-[35] Federal Managers' Financial Integrity Act. (1982). 31 USC. § 3512.
-[36] Federal Reserve Bank of Cleveland. (2024). All Financial Institution Resources.
-https://www.clevelandfed.org/banking-and-payments
-[37] Financial Industry Regulatory Authority. (2024). Cybersecurity and Technology
-Governance. https://www.finra.org/rules-guidance/key-topics/cybersecurity
-[38] Financial Services Information Sharing and Analysis Center. (2024). Threat Intelligence
-Sharing Platform. https://www.fsisac.com/
-[39] Financial Stability Oversight Council. (n.d.). About FSOC. US Department of the Treasury.
-https://home.treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscalservice/fsoc
-[40] Forescout Technologies. (2018). Total Visibility: The Master Key to Zero Trust. Forescout
-White Paper. https://www.forescout.com/wp-content/uploads/2018/11/zero-trust-white-paper.pdf
-[41] Gambo, M. L., & Almulhem, A. (2025). Zero Trust Architecture: A Systematic Literature
-Review. ArXiv Preprint. https://arxiv.org/abs/2503.11659
-[42] Google Cloud, Inc. (2024). Google Cloud Security.
-https://cloud.google.com/security/products/threat-intelligence
-[43] Gramm-Leach-Bliley Act. (1999). Pub. L. 106-102, 113 Stat. 1338, 15 USC. § 6801 et seq.
-[44] IBM Corporation. (2024). QRadar SIEM Technical Documentation.
-https://www.ibm.com/docs/en/qsip
-[45] IBM Corporation. (2024). X-Force Threat Intelligence.
-https://www.ibm.com/security/xforce
-ROM3: Post-Implementation Report Comprehensive Zero-Trust Transformation
-PAGE 31
-[46] Infragard National Members Alliance. (2024). FBI InfraGard Private Sector Affiliation.
-https://www.infragardnational.org/
-[47] Investment Company Act of 1940. (1940). 15 USC. § 80a-1 et seq.
-[48] Juniper Networks. (2023). The Rise of Zero Trust: Separating the Reality from the Myths.
-Juniper Networks White Paper. https://www.juniper.net/content/dam/www/assets/whitepapers/us/en/security/the-rise-of-zero-trust.pdf
-[49] Khan, M. J. (2023). Zero Trust Architecture: Redefining Network Security Paradigms in the
-Digital Age. World Journal of Advanced Research and Reviews, 19(3), 1785-1792.
-https://doi.org/10.30574/wjarr.2023.19.3.1785
-[50] Kim, D.-H. (2024). A Study on the Application of Zero Trust Model for Financial
-Companies. Journal of Information and Security, 24(4), 67-78.
-https://doi.org/10.33778/kcsa.2024.24.4.067
-[51] Kushala, K., & Kurunthachalam, A. (2019). Zero Trust Network Security Model in Cloud
-Computing Environment. International Journal of Business Management and Economic
-Research, 10(4), 1612-1618. https://ijbmer.org/uploads2019/BMER_8_133.1.pdf
-[52] Lansweeper NV. (2024). Enterprise Asset Discovery Documentation.
-https://www.lansweeper.com/product/
-[53] Lyon, G. (2024). Nmap Network Discovery and Security Auditing. https://nmap.org/book/
-[54] ManageEngine. (2024). AssetExplorer IT Asset Management Documentation.
-https://www.manageengine.com/products/asset-explorer/
-[55] McQuaid, A., MacDonald, N., Watts, J., & Kaur, R. (2023). Market Guide for Zero Trust
-Network Access. Gartner Research. https://www.gartner.com/en/documents/4632099
-[56] Microsoft Corporation. (2024). Defender for Endpoint Technical Documentation.
-https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/
-[57] Microsoft Corporation. (2024). Intune Mobile Device Management Documentation.
-https://docs.microsoft.com/en-us/mem/intune/
-[58] Microsoft Corporation. (2024). Microsoft Threat Intelligence Documentation.
-https://docs.microsoft.com/en-us/microsoft-365/security/
-[59] Microsoft. (2024). Zero Trust Deployment Guide. Microsoft Learn.
-https://learn.microsoft.com/en-us/security/zero-trust/
-[60] MITRE Corporation. (2024). ATT&CK Framework for Financial Services.
-ROM3: Post-Implementation Report Comprehensive Zero-Trust Transformation
-PAGE 32
-https://attack.mitre.org/
-[61] Mitre Corporation | ATT&CK Evaluations. (2024). Carbanak + FIN7.
-https://evals.mitre.org/enterprise/carbanak-fin7
-[62] Muhammad, S. (2025). A Unified Cryptographic and Machine Learning Framework for
-Digital Banking Fraud Mitigation Technical Analysis, Threat Modeling, and Defensive
-Innovations. International Journal of Innovative Research in Science Engineering and
-Technology, 14, 17144.
-https://www.ijirset.com/upload/2025/july/8_A%20Unified%20Cryptographic%20and%20Machi
-ne%20Learning%20Framework%20for%20Digital%20Banking%20Fraud%20Mitigation%20Te
-chnical%20Analysis,%20Threat%20Modeling,%20and%20Defensive%20Innovations.pdf
-[63] Office of Foreign Assets Control. (n.d.). Sanctions programs and country information. US
-Department of the Treasury. https://ofac.treasury.gov/
-[64] Office of the Comptroller of the Currency. (n.d.). Safety and soundness standards. 12 CFR
-30. https://www.occ.treas.gov/
-[65] Office of the Superintendent of Financial Institutions Canada. (2024). Guidance library:
-Regulatory guidance for federally regulated financial institutions. Government of Canada.
-https://www.osfi-bsif.gc.ca/
-[66] Ohio Administrative Code. (2024). Ohio Admin. Code.
-[67] Ohio Bankers League. (2024). https://www.ohiobankersleague.com/
-[68] Ohio Division of Financial Institutions. (2024). Banking Regulations and Cybersecurity
-Requirements. https://com.ohio.gov/divisions-and-programs/financial-institutions
-[69] Ohio Revised Code. (2024). Ohio Rev. Code.
-[70] Okta, Inc. (2024). Professional Services Implementation Guide.
-https://www.okta.com/services/professional-services/
-[71] Okta, Inc. (2024). Universal Directory Technical Documentation.
-https://developer.okta.com/docs/concepts/
-[72] Palo Alto Networks. (2024). Next-Generation Firewall Administrator's Guide.
-https://docs.paloaltonetworks.com/pan-os
-[73] Palo Alto Networks. (2024). Prisma Access Technical Documentation.
-https://docs.paloaltonetworks.com/prisma/prisma-access
-[74] Palo Alto Networks. (2024). Professional Services Consulting Documentation.
-ROM3: Post-Implementation Report Comprehensive Zero-Trust Transformation
-PAGE 33
-https://www.paloaltonetworks.com/services/
-[75] Pan, Y., Liu, S., Zhang, J., & Wu, H. (2023). A Supply Chain Finance Framework Based on
-Zero-Trust Architecture. Proceedings of the 2023 IEEE 14th International Conference on
-Software Engineering and Service Science (ICSESS) (pp. 217-221).
-https://doi.org/10.1109/ICSESS58500.2023.10293068
-[76] Payment Card Industry Security Standards Council. (2024). Payment Card Industry Data
-Security Standard (PCI DSS): Requirements and security assessment procedures, version 4.0.
-https://www.pcisecuritystandards.org/
-[77] Ping Identity Corporation. (2024). PingOne for Enterprise Technical Specifications.
-https://docs.pingidentity.com/
-[78] Rapid7 LLC. (2024). Professional Services Security Assessment Documentation.
-https://www.rapid7.com/services/
-[79] Recorded Future, Inc. (2024). Threat Intelligence Platform Documentation.
-https://www.recordedfuture.com/
-[80] Rose, S., Borchert, O., Mitchell, S., & Connelly, S. (2020). Zero Trust Architecture (NIST
-Special Publication 800-207). National Institute of Standards and Technology.
-https://doi.org/10.6028/NIST.SP.800-207
-[81] Sarbanes-Oxley Act of 2002. (2002). Pub. L. 107-204, 116 Stat. 745, 15 USC. § 7201 et
-seq.
-[82] Securities Act of 1933. (1933). 15 USC. § 77a et seq.
-[83] Securities and Exchange Commission. (n.d.). About the SEC. https://www.sec.gov/
-[84] Shostack, A. (2014). Threat modeling: Designing for security. John Wiley & Sons.
-[85] SolarWinds Corporation. (2024). Network Performance Monitor Technical Documentation.
-https://documentation.solarwinds.com/en/success_center/npm/
-[86] Splunk Inc. (2024). Enterprise Security Documentation.
-https://docs.splunk.com/Documentation/ES
-[87] Splunk Inc. (2024). SOAR (Cloud) Security Orchestration Platform.
-https://docs.splunk.com/Documentation/SOAR
-[88] Splunk Inc. (2024). Universal Forwarder Deployment Guide.
-https://docs.splunk.com/Documentation/Forwarder
-[89] Truth in Lending Act. (1968). 15 USC. § 1601 et seq.
-ROM3: Post-Implementation Report Comprehensive Zero-Trust Transformation
-PAGE 34
-[90] Tsai, M., Lee, S., & Shieh, S. W. (2024). Strategy for Implementing of Zero Trust
-Architecture. IEEE Transactions on Reliability, 73(1), 93-100.
-https://doi.org/10.1109/TR.2023.3345665
-[91] US Government Accountability Office. (n.d.). Standards for internal control in the federal
-government (Green Book). https://www.gao.gov/
-[92] USA PATRIOT Act. (2001). Pub. L. 107-56, 115 Stat. 272.
-[93] Wei, Y. C., & Yu, T. W. (2025). Towards Zero Trust for Financial Sectors: A Proposed
-Framework on Trust Evaluation. In G. A. Tsihrintzis, S. J. Wang, & C. H. Wang (Eds.), Security
-and Information Technologies with AI, Internet Computing and Big-Data Applications (pp. 89-
-102). Springer. https://doi.org/10.1007/978-981-97-7786-0_7
-[94] Wireshark Foundation. (2024). Wireshark Network Protocol Analyzer Documentation.
-https://www.wireshark.org/docs/
-[95] Yeoh, W., Liu, M., Shore, M., & Jiang, F. (2023). Zero Trust Cybersecurity: Critical
-Success Factors and a Maturity Assessment Framework. Computers & Security, 133, 103412.
-https://doi.org/10.1016/j.cose.2023.103412
-[96] Zscaler, Inc. (2024). Private Access Technical Guide. https://help.zscaler.com/ 
+[1] Abdelmagid, A. M., & Diaz, R. (2025). Zero Trust Architecture as a Risk Countermeasure in Small-Medium Enterprises and Advanced Technology Systems. Risk Analysis, 45(4), 1-18. https://doi.org/10.1111/risa.70026<br>
+
+[2] Adahman, Z., Malik, A. W., & Anwar, Z. (2022). An Analysis of Zero-Trust Architecture and Its Cost-Effectiveness for Organizational Security. Computers & Security, 122, 102911. https://doi.org/10.1016/j.cose.2022.102911<br>
+
+[3] Axis Intelligence. (2025). Zero Trust Implementation Cost Calculator 2025. https://axisintelligence.com/zero-trust-implementation-cost-calculator-2025/<br>
+
+[4] Bairy, V. (2023). Zero Trust Architectures in Financial Institutions: A Case Study of Implementing Identity-Based Access Control with Cisco ISE. SSRN Electronic Journal. https://doi.org/10.2139/ssrn.5189885<br>
+
+[5] Bank Holding Company Act. (1956). 12 USC. § 1841 et seq.<br>
+
+[6] Bank Secrecy Act. (1970). 31 USC. § 5311 et seq.<br>
+
+[7] Basel Committee on Banking Supervision. (2017). Basel III: Finalising post-crisis reforms (Basel IV). Bank for International Settlements. https://www.bis.org/<br>
+
+[8] Board of Governors of the Federal Reserve System. (n.d.). Capital adequacy guidelines for bank holding companies. 12 CFR 225. https://www.federalreserve.gov/<br>
+
+[9] Bonderud, D. (2024). Security Cost of a Data Breach 2024 Financial Industry. IBM Think. https://www.ibm.com/think/insights/cost-of-a-data-breach-2024-financial-industry<br>
+
+[10] Broadcom. (2024). vSphere Documentation Center. https://techdocs.broadcom.com/us/en/vmware-cis/vsphere.html<br>
+
+[11] Cloudflare, US Department of Treasury, Pacific Northwest National Labratory. (2024). Tailored Threat Intelligence for Financial Institutions. https://www.cloudflare.com/pressreleases/2024/us-department-of-treasury-pnnl-finserv-threat-intel-feed/<br>
+
+[12] Commodity Futures Trading Commission. (n.d.). About the CFTC. https://www.cftc.gov/<br>
+
+[13] Community Reinvestment Act. (1977). 12 USC. § 2901 et seq.<br>
+
+[14] Consumer Financial Protection Bureau. (n.d.). About us. https://www.consumerfinance.gov/<br>
+
+[15] CrowdStrike Holdings, Inc. (2024). Falcon Endpoint Protection Platform Documentation. https://developer.crowdstrike.com/docs<br>
+
+[16] Cunningham, C. (2018). The Zero Trust eXtended (ZTX) Ecosystem. Forrester Research. https://engage2demand.cisco.com/LP=10091<br>
+
+[17] Cybersecurity and Infrastructure Security Agency. (2023). Zero Trust Maturity Model (Version 2.0). US Department of Homeland Security. https://www.cisa.gov/sites/default/files/2023-04/zero_trust_maturity_model_v2_508.pdf<br>
+
+[18] Cybersecurity and Infrastructure Security Agency. (2024). Automated Indicator Sharing Program. https://www.cisa.gov/topics/cyber-threats-and-advisories/informationsharing/automated-indicator-sharing-ais<br>
+
+[19] Daah, C., Qureshi, A., & Awan, I. (2023). Zero Trust Model Implementation Considerations in Financial Institutions: A Proposed Framework. Proceedings of the 2023 IEEE 11th International Conference on Future Internet of Things and Cloud (FiCloud) (pp. 71-77). https://doi.org/10.1109/FiCloud58648.2023.00019<br>
+
+[20] Daah, C., Qureshi, A., Awan, I., & Konur, S. (2024). Enhancing Zero Trust Models in the Financial Industry through Blockchain Integration: A Proposed Framework. Electronics, 13(5), 865. https://doi.org/10.3390/electronics13050865<br>
+
+[21] Darktrace Ltd. (2024). Enterprise Immune System Technical Overview. https://www.darktrace.com/<br>
+
+[22] Darktrace Ltd. (2024). Machine Learning Deployment Services. https://www.darktrace.com/services/<br>
+
+[23] Deloitte & Touche LLP. (2024). Cybersecurity Strategy, Transformation and Assessment. https://www.deloitte.com/lu/en/services/consulting-risk/services/cyber-strategy-transformationassessments.html<br>
+
+[24] Dhiman, P., Saini, N., Gulzar, Y., Turaev, S., Kaur, A., Nisa, K. U., & Hamid, Y. (2024). A Review and Comparative Analysis of Relevant Approaches of Zero Trust Network Model. Sensors, 24(4), 1328. https://doi.org/10.3390/s24041328<br>
+
+[25] Dodd-Frank Wall Street Reform and Consumer Protection Act. (2010). Pub. L. 111-203, 124 Stat. 1376.<br>
+
+[26] Edo, O. C., Tenebe, T., Etu, E., Ayuwu, A., Emakhu, J., & Adebiyi, S. (2022). Zero Trust Architecture: Trend and Impact on Information Security. International Journal of Emerging Technology and Advanced Engineering, 12(7), 140-147. https://doi.org/10.46338/ijetae0722_15<br>
+
+[27] Elastic N.V. (2024). The Elastic Stack. https://www.elastic.co/docs/get-started/the-stack<br>
+
+[28] Equal Credit Opportunity Act. (1974). 15 USC. § 1691 et seq.<br>
+
+[29] Factor Analysis of Information Risk Institute. (2024). FAIR Risk Assessment Standards. https://www.fairinstitute.org/<br>
+
+[30] Fair Credit Reporting Act. (1970). 15 USC. § 1681 et seq.<br>
+
+[31] Federal Deposit Insurance Act. (1950). 12 USC. § 1811 et seq.<br>
+
+[32] Federal Deposit Insurance Corporation. (n.d.). Part 363 - Annual independent audits and reporting requirements. 12 CFR 363.<br>
+
+[33] Federal Financial Institutions Examination Council. (2024). Cybersecurity Assessment Tool. https://www.ffiec.gov/cyberassessmenttool.htm (Soon to be decommissioned)<br>
+
+[34] Federal Financial Institutions Examination Council. (2024). IT Examination Handbook InfoBase. https://ithandbook.ffiec.gov/<br>
+
+[35] Federal Managers' Financial Integrity Act. (1982). 31 USC. § 3512.<br>
+
+[36] Federal Reserve Bank of Cleveland. (2024). All Financial Institution Resources. https://www.clevelandfed.org/banking-and-payments<br>
+
+[37] Financial Industry Regulatory Authority. (2024). Cybersecurity and Technology Governance. https://www.finra.org/rules-guidance/key-topics/cybersecurity<br>
+
+[38] Financial Services Information Sharing and Analysis Center. (2024). Threat Intelligence Sharing Platform. https://www.fsisac.com/<br>
+
+[39] Financial Stability Oversight Council. (n.d.). About FSOC. US Department of the Treasury. https://home.treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscalservice/fsoc<br>
+
+[40] Forescout Technologies. (2018). Total Visibility: The Master Key to Zero Trust. Forescout White Paper. https://www.forescout.com/wp-content/uploads/2018/11/zero-trust-white-paper.pdf<br>
+
+[41] Gambo, M. L., & Almulhem, A. (2025). Zero Trust Architecture: A Systematic Literature Review. ArXiv Preprint. https://arxiv.org/abs/2503.11659<br>
+
+[42] Google Cloud, Inc. (2024). Google Cloud Security. <br>https://cloud.google.com/security/products/threat-intelligence
+
+[43] Gramm-Leach-Bliley Act. (1999). Pub. L. 106-102, 113 Stat. 1338, 15 USC. § 6801 et seq.<br>
+
+[44] IBM Corporation. (2024). QRadar SIEM Technical Documentation. https://www.ibm.com/docs/en/qsip<br>
+
+[45] IBM Corporation. (2024). X-Force Threat Intelligence. https://www.ibm.com/security/xforce<br>
+
+[46] Infragard National Members Alliance. (2024). FBI InfraGard Private Sector Affiliation. https://www.infragardnational.org/<br>
+
+[47] Investment Company Act of 1940. (1940). 15 USC. § 80a-1 et seq.<br>
+
+[48] Juniper Networks. (2023). The Rise of Zero Trust: Separating the Reality from the Myths. Juniper Networks White Paper. https://www.juniper.net/content/dam/www/assets/whitepapers/us/en/security/the-rise-of-zero-trust.pdf<br>
+
+[49] Khan, M. J. (2023). Zero Trust Architecture: Redefining Network Security Paradigms in the Digital Age. World Journal of Advanced Research and Reviews, 19(3), 1785-1792. https://doi.org/10.30574/wjarr.2023.19.3.1785<br>
+
+[50] Kim, D.-H. (2024). A Study on the Application of Zero Trust Model for Financial Companies. Journal of Information and Security, 24(4), 67-78. https://doi.org/10.33778/kcsa.2024.24.4.067<br>
+
+[51] Kushala, K., & Kurunthachalam, A. (2019). Zero Trust Network Security Model in Cloud Computing Environment. International Journal of Business Management and Economic Research, 10(4), 1612-1618. https://ijbmer.org/uploads2019/BMER_8_133.1.pdf<br>
+
+[52] Lansweeper NV. (2024). Enterprise Asset Discovery Documentation. https://www.lansweeper.com/product/<br>
+
+[53] Lyon, G. (2024). Nmap Network Discovery and Security Auditing. https://nmap.org/book/<br>
+
+[54] ManageEngine. (2024). AssetExplorer IT Asset Management Documentation. https://www.manageengine.com/products/asset-explorer/<br>
+
+[55] McQuaid, A., MacDonald, N., Watts, J., & Kaur, R. (2023). Market Guide for Zero Trust Network Access. Gartner Research. https://www.gartner.com/en/documents/4632099<br>
+
+[56] Microsoft Corporation. (2024). Defender for Endpoint Technical Documentation. https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/<br>
+
+[57] Microsoft Corporation. (2024). Intune Mobile Device Management Documentation. https://docs.microsoft.com/en-us/mem/intune/<br>
+
+[58] Microsoft Corporation. (2024). Microsoft Threat Intelligence Documentation. https://docs.microsoft.com/en-us/microsoft-365/security/<br>
+
+[59] Microsoft. (2024). Zero Trust Deployment Guide. Microsoft Learn. https://learn.microsoft.com/en-us/security/zero-trust/<br>
+
+[60] MITRE Corporation. (2024). ATT&CK Framework for Financial Services.<br>
+
+[61] Mitre Corporation | ATT&CK Evaluations. (2024). Carbanak + FIN7. https://evals.mitre.org/enterprise/carbanak-fin7<br>
+
+[62] Muhammad, S. (2025). A Unified Cryptographic and Machine Learning Framework for Digital Banking Fraud Mitigation Technical Analysis, Threat Modeling, and Defensive Innovations. International Journal of Innovative Research in Science Engineering and Technology, 14, 17144. 
+https://www.ijirset.com/upload/2025/july/8_A%20Unified%20Cryptographic%20and%20Machine%20Learning%20Framework%20for%20Digital%20Banking%20Fraud%20Mitigation%20Technical%20Analysis,%20Threat%20Modeling,%20and%20Defensive%20Innovations.pdf<br>
+
+[63] Office of Foreign Assets Control. (n.d.). Sanctions programs and country information. US Department of the Treasury. https://ofac.treasury.gov/<br>
+
+[64] Office of the Comptroller of the Currency. (n.d.). Safety and soundness standards. 12 CFR 30. https://www.occ.treas.gov/<br>
+
+[65] Office of the Superintendent of Financial Institutions Canada. (2024). Guidance library: Regulatory guidance for federally regulated financial institutions. Government of Canada. https://www.osfi-bsif.gc.ca/<br>
+
+[66] Ohio Administrative Code. (2024). Ohio Admin. Code.<br>
+
+[67] Ohio Bankers League. (2024). https://www.ohiobankersleague.com/<br>
+
+[68] Ohio Division of Financial Institutions. (2024). Banking Regulations and Cybersecurity Requirements. https://com.ohio.gov/divisions-and-programs/financial-institutions<br>
+
+[69] Ohio Revised Code. (2024). Ohio Rev. Code.<br>
+
+[70] Okta, Inc. (2024). Professional Services Implementation Guide. https://www.okta.com/services/professional-services/<br>
+
+[71] Okta, Inc. (2024). Universal Directory Technical Documentation. https://developer.okta.com/docs/concepts/<br>
+
+[72] Palo Alto Networks. (2024). Next-Generation Firewall Administrator's Guide. https://docs.paloaltonetworks.com/pan-os<br>
+
+[73] Palo Alto Networks. (2024). Prisma Access Technical Documentation. https://docs.paloaltonetworks.com/prisma/prisma-access<br>
+
+[74] Palo Alto Networks. (2024). Professional Services Consulting Documentation. https://www.paloaltonetworks.com/services/<br>
+
+[75] Pan, Y., Liu, S., Zhang, J., & Wu, H. (2023). A Supply Chain Finance Framework Based on Zero-Trust Architecture. Proceedings of the 2023 IEEE 14th International Conference on Software Engineering and Service Science (ICSESS) (pp. 217-221). https://doi.org/10.1109/ICSESS58500.2023.10293068<br>
+
+[76] Payment Card Industry Security Standards Council. (2024). Payment Card Industry Data Security Standard (PCI DSS): Requirements and security assessment procedures, version 4.0. https://www.pcisecuritystandards.org/<br>
+
+[77] Ping Identity Corporation. (2024). PingOne for Enterprise Technical Specifications. https://docs.pingidentity.com/<br>
+
+[78] Rapid7 LLC. (2024). Professional Services Security Assessment Documentation. https://www.rapid7.com/services/<br>
+
+[79] Recorded Future, Inc. (2024). Threat Intelligence Platform Documentation. https://www.recordedfuture.com/<br>
+
+[80] Rose, S., Borchert, O., Mitchell, S., & Connelly, S. (2020). Zero Trust Architecture (NIST Special Publication 800-207). National Institute of Standards and Technology. https://doi.org/10.6028/NIST.SP.800-207<br>
+
+[81] Sarbanes-Oxley Act of 2002. (2002). Pub. L. 107-204, 116 Stat. 745, 15 USC. § 7201 et seq.<br>
+
+[82] Securities Act of 1933. (1933). 15 USC. § 77a et seq.<br>
+
+[83] Securities and Exchange Commission. (n.d.). About the SEC. https://www.sec.gov/<br>
+
+[84] Shostack, A. (2014). Threat modeling: Designing for security. John Wiley & Sons.<br>
+
+[85] SolarWinds Corporation. (2024). Network Performance Monitor Technical Documentation. https://documentation.solarwinds.com/en/success_center/npm/<br>
+
+[86] Splunk Inc. (2024). Enterprise Security Documentation. https://docs.splunk.com/Documentation/ES<br>
+
+[87] Splunk Inc. (2024). SOAR (Cloud) Security Orchestration Platform. https://docs.splunk.com/Documentation/SOAR<br>
+
+[88] Splunk Inc. (2024). Universal Forwarder Deployment Guide. https://docs.splunk.com/Documentation/Forwarder<br>
+
+[89] Truth in Lending Act. (1968). 15 USC. § 1601 et seq.<br>
+
+[90] Tsai, M., Lee, S., & Shieh, S. W. (2024). Strategy for Implementing of Zero Trust Architecture. IEEE Transactions on Reliability, 73(1), 93-100. https://doi.org/10.1109/TR.2023.3345665<br>
+
+[91] US Government Accountability Office. (n.d.). Standards for internal control in the federal government (Green Book). https://www.gao.gov/<br>
+
+[92] USA PATRIOT Act. (2001). Pub. L. 107-56, 115 Stat. 272.<br>
+
+[93] Wei, Y. C., & Yu, T. W. (2025). Towards Zero Trust for Financial Sectors: A Proposed Framework on Trust Evaluation. In G. A. Tsihrintzis, S. J. Wang, & C. H. Wang (Eds.), Security and Information Technologies with AI, Internet Computing and Big-Data Applications (pp. 89-102). Springer. 
+https://doi.org/10.1007/978-981-97-7786-0_7<br>
+
+[94] Wireshark Foundation. (2024). Wireshark Network Protocol Analyzer Documentation. https://www.wireshark.org/docs/<br>
+
+[95] Yeoh, W., Liu, M., Shore, M., & Jiang, F. (2023). Zero Trust Cybersecurity: Critical Success Factors and a Maturity Assessment Framework. Computers & Security, 133, 103412. https://doi.org/10.1016/j.cose.2023.103412<br>
+
+[96] Zscaler, Inc. (2024). Private Access Technical Guide. https://help.zscaler.com/
 
 ---
 
