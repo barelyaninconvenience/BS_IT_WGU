@@ -735,24 +735,24 @@ Most importantly, the implementation validates that security excellence and busi
 
 [1] Abdelmagid, A. M., & Diaz, R. (2025). Zero Trust Architecture as a Risk Countermeasure in
 Small-Medium Enterprises and Advanced Technology Systems. Risk Analysis, 45(4), 1-18.
-https://doi.org/10.1111/risa.70026
+https://doi.org/10.1111/risa.70026\
 [2] Adahman, Z., Malik, A. W., & Anwar, Z. (2022). An Analysis of Zero-Trust Architecture
 and Its Cost-Effectiveness for Organizational Security. Computers & Security, 122, 102911.
-https://doi.org/10.1016/j.cose.2022.102911
-[3] Axis Intelligence. (2025). Zero Trust Implementation Cost Calculator 2025. https://axisintelligence.com/zero-trust-implementation-cost-calculator-2025/
+https://doi.org/10.1016/j.cose.2022.102911\
+[3] Axis Intelligence. (2025). Zero Trust Implementation Cost Calculator 2025. https://axisintelligence.com/zero-trust-implementation-cost-calculator-2025/\
 [4] Bairy, V. (2023). Zero Trust Architectures in Financial Institutions: A Case Study of
 Implementing Identity-Based Access Control with Cisco ISE. SSRN Electronic Journal.
-https://doi.org/10.2139/ssrn.5189885
-[5] Bank Holding Company Act. (1956). 12 USC. § 1841 et seq.
-[6] Bank Secrecy Act. (1970). 31 USC. § 5311 et seq.
+https://doi.org/10.2139/ssrn.5189885\
+[5] Bank Holding Company Act. (1956). 12 USC. § 1841 et seq.\
+[6] Bank Secrecy Act. (1970). 31 USC. § 5311 et seq.\
 [7] Basel Committee on Banking Supervision. (2017). Basel III: Finalising post-crisis reforms
-(Basel IV). Bank for International Settlements. https://www.bis.org/
+(Basel IV). Bank for International Settlements. https://www.bis.org/\
 [8] Board of Governors of the Federal Reserve System. (n.d.). Capital adequacy guidelines for
-bank holding companies. 12 CFR 225. https://www.federalreserve.gov/
+bank holding companies. 12 CFR 225. https://www.federalreserve.gov/\
 [9] Bonderud, D. (2024). Security Cost of a Data Breach 2024 Financial Industry. IBM Think.
-https://www.ibm.com/think/insights/cost-of-a-data-breach-2024-financial-industry
+https://www.ibm.com/think/insights/cost-of-a-data-breach-2024-financial-industry\
 [10] Broadcom. (2024). vSphere Documentation Center.
-https://techdocs.broadcom.com/us/en/vmware-cis/vsphere.html
+https://techdocs.broadcom.com/us/en/vmware-cis/vsphere.html\
 [11] Cloudflare, US Department of Treasury, Pacific Northwest National Labratory. (2024).
 Tailored Threat Intelligence for Financial Institutions. https://www.cloudflare.com/pressreleases/2024/us-department-of-treasury-pnnl-finserv-threat-intel-feed/
 [12] Commodity Futures Trading Commission. (n.d.). About the CFTC. https://www.cftc.gov/
@@ -1318,27 +1318,6 @@ This virtual security zone configuration provides comprehensive protection for F
 # Appendix C: Network Architecture Diagrams
 
 <img width="1869" height="682" alt="image" src="https://github.com/user-attachments/assets/0e319c85-b702-4489-b4d0-2059ddcfaa39" />
-
----
-
-**End of Document**
-
----
-
-## Document Metadata
-
-- **Total Pages:** 82 (equivalent)
-- **Word Count:** ~31,000
-- **References:** 96 academic and industry sources
-- **Appendices:** 3 comprehensive technical guides
-- **Completion Date:** August 6, 2025
-- **Academic Level:** Undergraduate Capstone (Bachelor of Science)
-- **Institution:** Western Governors University
-- **Program:** Information Technology (Cybersecurity & Networking Emphasis)
-
-**Version:** 1.0 - GitHub Publication Edition  
-**Last Updated:** February 26, 2026  
-**Maintained by:** S. Clay Caddell
 
 ---
 
